@@ -36,7 +36,7 @@ module Devise
   
   def self.session_sign_in_url(request, mapping)
     url = URI.parse(request.url)
-    url.path = "#{mapping.parsed_path}/#{mapping.path_names[:sign_in]}"
+    url.path = "/#{mapping.path}/#{mapping.path_names[:sign_in]}"
     url.query = nil
     url.to_s
   end
